@@ -1,0 +1,68 @@
+<!--
+    https://cmpt276-asg1.herokuapp.com/ 
+    https://git.heroku.com/cmpt276-asg1.git
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="calculator.css" />
+</head>
+
+<body>
+    <div id="main_box" class="first">
+        <div>
+            <h1>Grade Calculator</h1>
+            <div id="second_box" class="first">
+                <div id="information_div">
+                    <h3>Activities</h3>
+                    <p>Give grades to the numeric activities:</p>
+                    <table id="table" class="main-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Short Name</th>
+                                <th>Weight</th>
+                                <th>Grade</th>
+                                <th>Percent</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table_body" class="tbody">
+                            <tr>
+                                <td>Activity 1</td>
+                                <td>A1</td>
+                                <td class="input_td">
+                                    <input id="weight1" type="number" min="0" />
+                                </td>
+                                <td  onchange="getPercent(1)" class="input_td">
+                                    <input id="score1"  class="score" type="number" min="0" /> /
+                                    <input id="total1"  class="total" type="number" min="0" />
+                                </td>
+                                <td>
+                                    <p id="percent1"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="btn_add_activity" onclick="addRow()">ADD ACTIVITY</button><br />
+                    <button id="btn_remove_activity" onclick="removeRow();">DELETE ACTIVITY</button>
+                    <div>
+                        <p class="final">Result:<span class="final" id="result"></span>
+                        </p>
+                    </div>
+                    <div class="buttons>" id="last_buttons" style="padding-bottom: 0em">
+                        <button class="right_side" onclick="getWeight()" id="btn_weight">WEIGHTED</button>
+                        <button class="right_side" onclick="getMean()" id="btn_mean">MEAN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
